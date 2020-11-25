@@ -1,0 +1,123 @@
+{
+  "routes": [
+    {
+      "icon": "mdi-apps",
+      "title": "Welcome",
+      "to": "/"
+    },
+    {
+      "icon": "mdi-account-hard-hat",
+      "title": "登入",
+      "to": "/login"
+    },
+    {
+      "icon": "mdi-chart-bubble",
+      "title": "Inspire",
+      "to": "/inspire"
+    },
+    {
+      "icon": "mdi-emoticon-poop",
+      "title": "範例",
+      "to": "/template",
+      "children": [
+        {
+          "icon": "mdi-page-layout-sidebar-left",
+          "title": "排版",
+          "to": "/layout"
+        },
+        {
+          "icon": "mdi-hammer-wrench",
+          "title": "工具欄",
+          "to": "/bars"
+        },
+        {
+          "icon": "mdi-gesture-tap-button",
+          "title": "按鈕",
+          "to": "/buttons"
+        },
+        {
+          "icon": "mdi-baguette",
+          "title": "麵包屑",
+          "to": "/breadcrumbs"
+        },
+        {
+          "icon": "mdi-card-account-details",
+          "title": "卡片",
+          "to": "/card"
+        },
+        {
+          "icon": "mdi-google-downasaur",
+          "title": "彈窗",
+          "to": "/dialogs"
+        },
+        {
+          "icon": "mdi-application",
+          "title": "收合面板",
+          "to": "/panels"
+        },
+        {
+          "icon": "mdi-playlist-edit",
+          "title": "輸入框",
+          "to": "/inputs"
+        },
+        {
+          "icon": "mdi-format-list-bulleted-type",
+          "title": "列表",
+          "to": "/lists"
+        },
+        {
+          "icon": "mdi-label-multiple",
+          "title": "標籤組",
+          "to": "/chip"
+        },
+        {
+          "icon": "mdi-progress-clock",
+          "title": "進度條",
+          "to": "/progress"
+        },
+        {
+          "icon": "mdi-message-processing",
+          "title": "訊息",
+          "to": "/message"
+        },
+        {
+          "icon": "mdi-table-settings",
+          "title": "表格",
+          "to": "/tables"
+        },
+        {
+          "icon": "mdi-file-table-box-multiple-outline",
+          "title": "分頁",
+          "to": "/tabs"
+        },
+        {
+          "icon": "mdi-tooltip",
+          "title": "提示",
+          "to": "/tooltips"
+        }
+      ]
+    },
+    {
+      "icon": "mdi-cake",
+      "title": "套件",
+      "to": "/plugins",
+      "children": [
+        {
+          "icon": "mdi-playlist-edit",
+          "title": "CKEditor",
+          "to": "/CKEditor"
+        },
+        {
+          "icon": "mdi-chart-areaspline",
+          "title": "Echarts",
+          "to": "/Echarts"
+        },
+        {
+          "icon": "mdi-emoticon-cool",
+          "title": "奶子",
+          "to": "/cool"
+        }
+      ]
+    }
+  ]
+}
