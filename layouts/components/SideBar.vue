@@ -3,15 +3,16 @@
     :value="drawer"
     color="#E1F5FE"
     :mini-variant="miniVariant"
+    @input="setDrawer"
     app
   >
     <v-card height="100%" rounded="0">
       <v-img
         class="white--text"
         :aspect-ratio="1.15"
-        src="https://cdn2.ettoday.net/images/802/802475.jpg"
+        src="https://imgur.dcard.tw/zrnIPPQb.jpg"
       >
-        <v-card-title v-show="!miniVariant">肥豬模板</v-card-title>
+        <v-card-title v-show="!miniVariant">微厝 - 總部管理系統</v-card-title>
       </v-img>
       <v-list class="sidebarMenus">
         <SideBarItem
@@ -19,7 +20,7 @@
           :key="i"
           :route="route"
           :miniVariant="miniVariant"
-          @open-side-bar="toggle('miniVariant')"
+          @open-side-bar="setMiniVariant"
         ></SideBarItem>
       </v-list>
     </v-card>
@@ -37,19 +38,20 @@ const routeSetting = require("@/setting/routes.json");
 @Component({ components: { SideBarItem } })
 export default class SideBar extends Vue {
   @State(state => state.app.miniVariant) miniVariant!: boolean;
+  @State(state => state.app.drawer) drawer!: boolean;
 
-  get drawer() {
-    return AppModule.drawer;
-  }
+  // get drawer() {
+  //   return AppModule.drawer;
+  // }
 
   routes = routeSetting.routes;
 
-  toggle(type: AppStateKeys, data: boolean = false) {
-    AppModule.toggle(type, data);
+  setMiniVariant(data: boolean = false) {
+    AppModule.setData({ type: "miniVariant", data });
   }
 
-  drawerToggle(data: boolean) {
-    AppModule.toggle("drawer", data);
+  setDrawer(data: boolean = false) {
+    AppModule.setData({ type: "drawer", data });
   }
 }
 </script>

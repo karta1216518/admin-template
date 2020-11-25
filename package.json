@@ -21,9 +21,7 @@
     "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.6.5",
     "echarts": "^4.9.0",
-    "fs": "0.0.1-security",
-    "nuxt": "^2.14.6",
-    "three": "^0.119.1"
+    "nuxt": "^2.14.6"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",

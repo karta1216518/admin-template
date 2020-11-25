@@ -22,8 +22,6 @@
     </v-main>
 
     <Drawer></Drawer>
-
-    <Wife></Wife>
   </v-app>
 </template>
 
@@ -34,16 +32,16 @@ import { AppStateKeys } from "@/store/app";
 
 import SideBar from "./components/SideBar.vue";
 import Drawer from "./components/Drawer.vue";
-import Wife from "@/components/Wife/index.vue";
 
-@Component({ components: { SideBar, Drawer, Wife } })
+@Component({ components: { SideBar, Drawer } })
 export default class DefaultLayout extends Vue {
   get miniVariant() {
     return AppModule.miniVariant;
   }
 
   toggle(type: AppStateKeys) {
-    AppModule.toggle(type);
+    console.log("navbar-toggle");
+    AppModule.toggle({ type });
   }
 
   mounted() {}

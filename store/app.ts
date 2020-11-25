@@ -14,17 +14,23 @@ export default class App extends VuexModule implements AppState {
   drawer = false;
 
   @Mutation
-  private TOGGLE_DATA(type: AppStateKeys, data?: boolean) {
-    if (data && typeof data === "boolean") {
-      this[type] = data;
-    } else {
-      this[type] = !this[type];
-    }
+  private TOGGLE_DATA({ type }: { type: AppStateKeys }) {
+    this[type] = !this[type];
+  }
+
+  @Mutation
+  private SET_DATA({ type, data }: { type: AppStateKeys; data: boolean }) {
+    this[type] = data;
   }
 
   @Action
-  public toggle(type: AppStateKeys, data?: boolean) {
-    this.TOGGLE_DATA(type, data);
+  public toggle({ type }: { type: AppStateKeys }) {
+    this.TOGGLE_DATA({ type });
     // this.store.$router.push({ name: "inspire" });
+  }
+
+  @Action
+  public setData({ type, data }: { type: AppStateKeys; data: boolean }) {
+    this.SET_DATA({ type, data });
   }
 }

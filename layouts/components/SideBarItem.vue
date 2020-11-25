@@ -5,6 +5,7 @@
     router
     exact
     v-if="!route.children"
+    @click="holdSideBar"
   >
     <v-list-item-action>
       <v-icon>{{ route.icon }}</v-icon>
@@ -20,7 +21,7 @@
     no-action
     dense
     v-else
-    @click="$emit('open-side-bar')"
+    @click="holdSideBar"
   >
     <template v-slot:activator>
       <v-list-item-content>
@@ -48,7 +49,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from "nuxt-property-decorator";
-import { IRoute } from "@/models/routeDTO";
+import { IRoute } from "@/models/RouteDTO";
 
 @Component({ components: {} })
 export default class SideBarItem extends Vue {
@@ -57,7 +58,12 @@ export default class SideBarItem extends Vue {
   @Watch("miniVariant")
   onCloseSideBar(val: boolean) {
     const group: any = this.$refs["list-group"];
-    val && group && (group.isActive = false);
+    // val && group && (group.isActive = false);
+  }
+
+  holdSideBar(): void {
+    console.log("holdSideBar");
+    this.$emit("open-side-bar", false);
   }
 }
 </script>
